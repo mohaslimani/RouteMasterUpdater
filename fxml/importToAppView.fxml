@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           stylesheets="@../css/style.css"
+           id="rootPane"
+           fx:controller="importToAppController">
+    <Pane fx:id="overlayPane" styleClass="gray-overlay"/>
+           
+    <!-- VBox splits space vertically -->
+    <VBox spacing="0" prefWidth="Infinity" prefHeight="Infinity">
+        <Button text="رجوع" onAction="#goBack"/>
+        <Region VBox.vgrow="ALWAYS" />
+        <Region VBox.vgrow="ALWAYS" />
+        <AnchorPane>
+            <StackPane fx:id="bottomPane" VBox.vgrow="ALWAYS"
+            AnchorPane.rightAnchor="100" AnchorPane.bottomAnchor="100">
+                <VBox spacing="10" alignment="CENTER">
+                    <Button fx:id="selectButton" text="غير متوفر" onAction="#selectFolder" prefWidth="200" style="-fx-background-color: red; -fx-text-fill: white;"/>
+                    <Button text="سلاسل قديمة" onAction="#addToApp" prefWidth="200" styleClass="old"/>
+                    <Button text="PERMINOU سلاسل" onAction="#addToApp" prefWidth="200" styleClass="perminou"/>
+                    <Button text="custom سلاسل" onAction="#addToApp" styleClass="custom"/>
+                </VBox>
+            </StackPane>
+
+            <StackPane fx:id="bottomPaneLeft"
+                VBox.vgrow="ALWAYS"
+                AnchorPane.leftAnchor="100"
+                AnchorPane.bottomAnchor="100">
+                <VBox spacing="10" alignment="CENTER">
+                    <Button text="خاص بالصنف أ (A)" onAction="#addToApp" prefWidth="200" styleClass="A"/>
+                    <Button text="خاص بالصنف ج (C)" onAction="#addToApp" prefWidth="200" styleClass="C"/>
+                    <Button text="خاص بالصنف د (D)" onAction="#addToApp" prefWidth="200" styleClass="D"/>
+                    <Button text="خاص بالصنف ه-ج (EC)" onAction="#addToApp" prefWidth="200" styleClass="EC"/>
+                </VBox>
+            </StackPane>
+        </AnchorPane>
+    </VBox>
+</StackPane>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.*?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="groupsEditorController"
+            stylesheets="@../css/style.css"
+            fitToWidth="true"
+            fitToHeight="true"
+            pannable="true"
+            style="-fx-background:transparent;"
+            id="rootPaneEditor">
+    <content>
+        <StackPane alignment="CENTER">
+        <Pane fx:id="overlayPane" styleClass="darkGray-overlay"/>
+            <FlowPane fx:id="myFlowPane"
+                    hgap="10"
+                    vgap="10"
+                    alignment="CENTER"
+                    prefWrapLength="800">
+                <padding>
+                    <Insets top="20" right="50" bottom="20" left="50"/>
+                </padding>
+
+                <Button text="رجوع" onAction="#goBack"/>
+
+                <StackPane onMouseClicked="#addNewGroup">
+                    <styleClass>
+                        <java.lang.String fx:value="card"/>
+                        <java.lang.String fx:value="cardGrp"/>
+                    </styleClass>
+                    <ImageView fitWidth="50" fitHeight="50">
+                        <Image url="@/images/plus.png"/>
+                    </ImageView>
+                </StackPane>
+            </FlowPane>
+        </StackPane>
+    </content>
+</ScrollPane>

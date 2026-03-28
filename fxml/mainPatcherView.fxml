@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           stylesheets="@../css/style.css"
+           id="rootPane"
+           fx:controller="patcherController"
+           prefWidth="900" prefHeight="600">
+    <Pane fx:id="overlayPane" styleClass="gray-overlay"/>
+
+    <FlowPane alignment="CENTER" hgap="50" vgap="50" prefWrapLength="600"
+        StackPane.alignment="CENTER" maxWidth="Infinity" maxHeight="Infinity">
+
+        <Button fx:id="importBtn" text="Import تحديث التطبيق"
+                prefWidth="300"
+                maxWidth="Infinity"/>
+
+        <Button fx:id="exportBtn" text="Export إنشاء ملف التحديث"
+                prefWidth="300"
+                maxWidth="Infinity"/>
+
+        <Button fx:id="addBtn" text="أضف سلسلة جديدة"
+                prefWidth="300"
+                maxWidth="Infinity"/>
+
+        <VBox fx:id="progressBox"
+            alignment="CENTER"
+            spacing="12"
+            visible="false"
+            styleClass="progress-box">
+
+            <Label fx:id="progress" text="Preparing..." styleClass="progress-label"/>
+            <ProgressBar fx:id="progressBar" prefWidth="500" styleClass="progress-bar"/>
+        </VBox>
+
+    </FlowPane>
+</StackPane>
